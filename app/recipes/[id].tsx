@@ -7,7 +7,6 @@ export default function RecipeDetail() {
 
   // Convert id to string for comparison as params are usually strings
   const recipe = recipes.find((r) => r.id.toString() === id);
-  if (recipe) console.log(recipe.title);
   if (!recipe) {
     return (
       <View style={{ padding: 20 }}>

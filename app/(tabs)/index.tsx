@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
+import RecipeCard from "../../components/RecipeCard";
 import { recipes } from "../../data/recipes";
 
 export default function HomeScreen() {
@@ -8,20 +8,7 @@ export default function HomeScreen() {
       <Text style={{ fontSize: 24, marginBottom: 20 }}>Show all Recipes</Text>
 
       {recipes.map((item) => (
-        <Link key={item.id} href={`/recipes/${item.id}`} asChild>
-          <Pressable
-            style={{
-              padding: 15,
-              marginBottom: 10,
-              backgroundColor: "#eee",
-              borderRadius: 10,
-            }}
-          >
-            <Text style={{ fontSize: 16 }}>
-              {item.title}, {item.id}
-            </Text>
-          </Pressable>
-        </Link>
+        <RecipeCard title={item.title} id={item.id} image={item.image} />
       ))}
     </ScrollView>
   );
