@@ -4,14 +4,19 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 type Props = {
   id: number;
   title: string;
-  image?: string;
+  image: string | undefined;
 };
 
 export default function RecipeCard({ id, title, image }: Props) {
   return (
     <Link href={`/recipes/${id}`} asChild>
-      <Pressable style={styles.card}>
+      <Pressable
+        style={styles.card}
+        accessibilityRole="button"
+        accessibilityLabel={`Move to ${title} recipe`}
+      >
         <Image
+          accessibilityLabel={image ? `${title} image` : "No Image"}
           source={
             image ? { uri: image } : require("../assets/images/cooking-pot.png")
           }

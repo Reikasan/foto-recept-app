@@ -8,7 +8,13 @@ export default function HomeScreen() {
       <Text style={{ fontSize: 24, marginBottom: 20 }}>Show all Recipes</Text>
 
       {recipes.map((item) => (
-        <RecipeCard title={item.title} id={item.id} image={item.image} />
+        <RecipeCard
+          key={item.id}
+          title={item.title}
+          id={item.id}
+          image={item.image}
+          ingredients={item.ingredients}
+        />
       ))}
     </ScrollView>
   );

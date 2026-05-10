@@ -1,5 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
-import { Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import IngredientList from "../../components/IngredientList";
 import { recipes } from "../../data/recipes";
 
 export default function RecipeDetail() {
@@ -16,12 +17,45 @@ export default function RecipeDetail() {
   }
 
   return (
-    <View style={{ padding: 20 }}>
-      <Text style={{ fontSize: 24, marginBottom: 40 }}>Recipe Detail</Text>
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>
-        Recipe Title: {recipe.title}
-      </Text>
-      <Text>{recipe.note}</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <Image
+        source={
+          recipe.image
+            ? { uri: recipe.image }
+            : require("../../assets/images/cooking-pot.png")
+        }
+        style={styles.image}
+      />
+      <View style={{ padding: 20 }}>
+        <Text style={styles.title}>{recipe.title}</Text>
+        <IngredientList items={recipe.ingredients} />
+        <Text style={styles.note}>{recipe.note}</Text>
+      </View>
+    </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 100,
+    backgroundColor: "#fff",
+  },
+  image: {
+    width: "100%",
+    height: 250,
+    borderRadius: 10,
+  },
+  content: {
+    padding: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  note: {
+    fontSize: 16,
+    lineHeight: 24,
+  },
+});
