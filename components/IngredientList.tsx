@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Typography } from "../theme/typography";
+import { typography } from "../theme/index";
 import { IngredientType } from "../types/recipe";
 
 type Props = {
@@ -21,6 +21,6 @@ export default function IngredientList({ items }: Props) {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: Typography.fontSize.lg,
+    fontSize: typography.fontSize.lg,
   },
 });

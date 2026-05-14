@@ -1,4 +1,4 @@
-export const Typography = {
+export const typography = {
   fontSize: {
     xs: 12,
     sm: 14,
@@ -19,5 +19,11 @@ export const Typography = {
     medium: "500",
     semibold: "600",
     bold: "700",
+  },
+  fontFamily: {
+    // These string values will be the keys used when loading fonts with useFonts in _layout.tsx
+    // Choose descriptive names for your font families.
+    text: "NotoSansRegular",
+    headline: "PlayfairDisplayItalic",
   },
 } as const;
