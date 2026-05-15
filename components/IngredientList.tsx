@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { typography } from "../theme/index";
 import { IngredientType } from "../types/recipe";
+import AppText from "./AppText";
 
 type Props = {
   items: IngredientType[];
@@ -9,11 +10,11 @@ type Props = {
 export default function IngredientList({ items }: Props) {
   return (
     <View>
-      <Text style={styles.title}>Ingredients</Text>
+      <AppText style={styles.title}>Ingredients</AppText>
       {items.map((item) => (
-        <Text key={item.id}>
+        <AppText key={item.id}>
           {item.name}: {item.amount}
-        </Text>
+        </AppText>
       ))}
     </View>
   );

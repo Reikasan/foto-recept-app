@@ -1,5 +1,6 @@
 import { Link } from "expo-router";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, View } from "react-native";
+import AppText from "./AppText";
 
 type Props = {
   id: number;
@@ -23,7 +24,7 @@ export default function RecipeCard({ id, title, image }: Props) {
           style={styles.image}
         />
         <View style={styles.content}>
-          <Text style={styles.title}>{title}</Text>
+          <AppText style={styles.title}>{title}</AppText>
         </View>
       </Pressable>
     </Link>

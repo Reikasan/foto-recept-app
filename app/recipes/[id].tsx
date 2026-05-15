@@ -1,5 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, View } from "react-native";
+import AppText from "../../components/AppText";
 import IngredientList from "../../components/IngredientList";
 import { recipes } from "../../data/recipes";
 
@@ -11,7 +12,7 @@ export default function RecipeDetail() {
   if (!recipe) {
     return (
       <View style={{ padding: 20 }}>
-        <Text>Recipe not found (ID: {id})</Text>
+        <AppText>Recipe not found (ID: {id})</AppText>
       </View>
     );
   }
@@ -27,9 +28,9 @@ export default function RecipeDetail() {
         style={styles.image}
       />
       <View style={{ padding: 20 }}>
-        <Text style={styles.title}>{recipe.title}</Text>
+        <AppText style={styles.title}>{recipe.title}</AppText>
         <IngredientList items={recipe.ingredients} />
-        <Text style={styles.note}>{recipe.note}</Text>
+        <AppText style={styles.note}>{recipe.note}</AppText>
       </View>
     </ScrollView>
   );
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   note: {
-    fontSize: 16,
     lineHeight: 24,
   },
 });

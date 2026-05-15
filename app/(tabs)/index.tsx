@@ -1,13 +1,17 @@
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
+import AppText from "../../components/AppText";
 import RecipeCard from "../../components/RecipeCard";
+import SearchBar from "../../components/SearchBar";
 import { recipes } from "../../data/recipes";
 import { color, space, typography } from "../../theme/index";
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.sectionTitle}>My Recipe Collection</Text>
-
+      <AppText variant="heading" style={styles.sectionTitle}>
+        My Recipe Collection
+      </AppText>
+      <SearchBar />
       {recipes.map((item) => (
         <RecipeCard
           key={item.id}
@@ -41,10 +45,8 @@ const styles = StyleSheet.create({
     fontWeight: typography.fontWeight.bold,
   },
   sectionTitle: {
-    fontFamily: typography.fontFamily.headline,
-    fontSize: typography.fontSize.md,
+    fontSize: typography.fontSize.sm,
     marginBottom: space.md,
-    color: color.text,
   },
   titleContainer: {
     flexDirection: "row",

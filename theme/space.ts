@@ -1,6 +1,7 @@
 export const space = {
-  xs: 4,
-  sm: 8,
+  xxs: 4,
+  xs: 8,
+  sm: 12,
   base: 16,
   md: 24,
   lg: 32,
