@@ -1,5 +1,5 @@
-import { StyleSheet, Text, TextProps } from "react-native";
-import { color, typography } from "../theme/index";
+import { Text, TextProps } from "react-native";
+import { color, typography } from "../../theme/index";
 
 type Variant = "body" | "heading";
 
@@ -20,8 +20,6 @@ export default function AppText({
     </Text>
   );
 }
-
-const styles = StyleSheet.create({});
 
 const variantStyles = {
   body: {

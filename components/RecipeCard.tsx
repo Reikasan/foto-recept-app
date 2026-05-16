@@ -1,6 +1,7 @@
-import { Link } from "expo-router";
-import { Image, Pressable, StyleSheet, View } from "react-native";
-import AppText from "./AppText";
+import { Image, StyleSheet, View } from "react-native";
+import { space, typography } from "../theme/index";
+import AppText from "./base/AppText";
+import CardWrapper from "./base/CardWrapper";
 
 type Props = {
   id: number;
@@ -10,24 +11,27 @@ type Props = {
 
 export default function RecipeCard({ id, title, image }: Props) {
   return (
-    <Link href={`/recipes/${id}`} asChild>
-      <Pressable
-        style={styles.card}
-        accessibilityRole="button"
-        accessibilityLabel={`Move to ${title} recipe`}
-      >
+    <CardWrapper
+      href={`/recipes/${id}`}
+      style={styles.card}
+      accessibilityLabel={`Move to ${title} recipe`}
+    >
+      {image ? (
         <Image
-          accessibilityLabel={image ? `${title} image` : "No Image"}
-          source={
-            image ? { uri: image } : require("../assets/images/cooking-pot.png")
-          }
+          accessibilityLabel={`${title} image`}
+          source={{ uri: image }}
           style={styles.image}
         />
-        <View style={styles.content}>
-          <AppText style={styles.title}>{title}</AppText>
+      ) : (
+        <View style={styles.placeholderImage}>
+          <AppText style={styles.title}>No Image</AppText>
         </View>
-      </Pressable>
-    </Link>
+      )}
+
+      <View style={styles.content}>
+        <AppText style={styles.title}>{title}</AppText>
+      </View>
+    </CardWrapper>
   );
 }
 
@@ -35,11 +39,20 @@ const styles = StyleSheet.create({
   card: {
     padding: 15,
     marginBottom: 10,
-    backgroundColor: "pink",
+    backgroundColor: "red",
     borderRadius: 10,
   },
+  placeholderImage: {
+    width: "100%",
+    height: 200,
+    padding: space.lg,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   title: {
-    fontSize: 24,
+    fontSize: typography.fontSize.lg,
+    fontFamily: typography.fontFamily.headline,
+    textAlign: "center",
   },
   image: {
     width: "100%",

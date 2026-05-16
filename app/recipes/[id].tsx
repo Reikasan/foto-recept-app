@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { Image, ScrollView, StyleSheet, View } from "react-native";
-import AppText from "../../components/AppText";
+import AppText from "../../components/base/AppText";
 import IngredientList from "../../components/IngredientList";
 import { recipes } from "../../data/recipes";
 

@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { typography } from "../theme/index";
 import { IngredientType } from "../types/recipe";
-import AppText from "./AppText";
+import AppText from "./base/AppText";
 
 type Props = {
   items: IngredientType[];
