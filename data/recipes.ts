@@ -4,6 +4,7 @@ export const recipes = [
     title: "omelette",
     image:
       "https://images.unsplash.com/photo-1677844592730-ce9c936d8f1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    categories: [1, 7],
     ingredients: [
       { id: 1, name: "eggs", amount: "2" },
       { id: 2, name: "butter", amount: "1 tbsp" },

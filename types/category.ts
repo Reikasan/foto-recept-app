@@ -1,7 +1,8 @@
 export type CategoryType = {
   id: number;
   title: string;
-  image: string | undefined;
+  image?: string;
   count: number;
-  variant: "horizontal" | "vertical" | "square";
+  shapeVariant: "horizontal" | "vertical" | "verticalLg" | "square";
+  changePosition?: boolean;
 };

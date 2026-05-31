@@ -1,5 +1,5 @@
-import { Image, StyleSheet, View } from "react-native";
-import { space, typography } from "../theme/index";
+import { Dimensions, Image, StyleSheet, View } from "react-native";
+import { color, space, typography } from "../theme/index";
 import AppText from "./base/AppText";
 import CardWrapper from "./base/CardWrapper";
 
@@ -8,6 +8,10 @@ type Props = {
   title: string;
   image: string | undefined;
 };
+
+const screenWidth = Dimensions.get("window").width;
+const screenWidthExGap = screenWidth - space.base * 2 - space.xs;
+const imgHeight = screenWidthExGap / 2;
 
 export default function RecipeCard({ id, title, image }: Props) {
   return (
@@ -37,10 +41,7 @@ export default function RecipeCard({ id, title, image }: Props) {
 
 const styles = StyleSheet.create({
   card: {
-    padding: 15,
-    marginBottom: 10,
-    backgroundColor: "red",
-    borderRadius: 10,
+    backgroundColor: color.backgroundWhite,
   },
   placeholderImage: {
     width: "100%",
@@ -50,14 +51,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: typography.fontSize.lg,
-    fontFamily: typography.fontFamily.headline,
-    textAlign: "center",
+    fontSize: typography.fontSize.base,
   },
   image: {
     width: "100%",
-    height: 200,
-    borderRadius: 10,
+    height: imgHeight,
   },
   content: {
     padding: 20,
