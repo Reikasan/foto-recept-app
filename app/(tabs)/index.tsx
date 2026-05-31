@@ -24,7 +24,6 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     paddingTop: space.xxl,
-
     paddingBottom: space.lg,
     backgroundColor: color.background,
   },
@@ -36,6 +35,10 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: typography.fontSize.md,
+    paddingHorizontal: space.md,
+    paddingTop: space.md,
+    paddingBottom: space.xs,
+    textTransform: "uppercase",
   },
   titleContainer: {
     flexDirection: "row",

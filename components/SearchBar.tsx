@@ -22,16 +22,15 @@ export default function SearchBar() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "80%",
     alignSelf: "center",
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
     backgroundColor: color.white,
     borderWidth: 1,
     borderColor: color.borderGrey,
     borderRadius: 5,
-    paddingLeft: space.xs,
+    paddingInline: space.xs,
+    marginHorizontal: space.md,
   },
   input: {
     flex: 1,

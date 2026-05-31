@@ -41,6 +41,8 @@ export const recipes = [
     title: "salad",
     image:
       "https://images.unsplash.com/photo-1570197571499-166b36435e9f?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+    categories: [1, 7],
     ingredients: [
       { id: 1, name: "tomato", amount: "2" },
       { id: 2, name: "cucumber", amount: "1" },

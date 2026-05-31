@@ -15,6 +15,7 @@ import { useEffect } from "react";
 
 // Import only the specific font weights you intend to use
 import { NotoSans_400Regular } from "@expo-google-fonts/noto-sans";
+import { PlayfairDisplay_400Regular } from "@expo-google-fonts/playfair-display/400Regular";
 import { PlayfairDisplay_400Regular_Italic } from "@expo-google-fonts/playfair-display/400Regular_Italic";
 import { PlayfairDisplay_700Bold } from "@expo-google-fonts/playfair-display/700Bold";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -31,6 +32,7 @@ export default function RootLayout() {
     // The keys here must match the string values you defined in typography.fontFamily
     NotoSansRegular: NotoSans_400Regular,
     PlayfairDisplayItalic: PlayfairDisplay_400Regular_Italic,
+    PlayfairDisplayRegular: PlayfairDisplay_400Regular,
     PlayfairDisplayBold: PlayfairDisplay_700Bold,
     // Add any other specific font weights you want to use here
     // e.g., NotoSansBold: NotoSans_700Bold,

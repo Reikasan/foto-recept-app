@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     height: imgHeight,
   },
   content: {
-    padding: 20,
+    paddingHorizontal: space.base,
+    paddingVertical: space.xs,
   },
 });

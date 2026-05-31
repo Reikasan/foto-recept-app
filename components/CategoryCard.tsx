@@ -50,17 +50,18 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     position: "absolute",
-    bottom: space.base,
+    bottom: space.md,
     left: space.base,
   },
   title: {
     fontSize: typography.fontSize.lg,
-    fontFamily: typography.fontFamily.headline,
+    fontFamily: typography.fontFamily.headlineItalic,
     color: color.textInverse,
   },
   count: {
-    fontFamily: typography.fontFamily.headline,
+    fontFamily: typography.fontFamily.headlineRegular,
     color: color.textInverse,
+    marginTop: space.xxs * -1,
   },
   image: {
     flex: 1,

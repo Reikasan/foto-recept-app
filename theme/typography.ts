@@ -24,6 +24,8 @@ export const typography = {
     // These string values will be the keys used when loading fonts with useFonts in _layout.tsx
     // Choose descriptive names for your font families.
     text: "NotoSansRegular",
-    headline: "PlayfairDisplayItalic",
+    headlineItalic: "PlayfairDisplayItalic",
+    headlineBold: "PlayfairDisplayBold",
+    headlineRegular: "PlayfairDisplayRegular",
   },
 } as const;
